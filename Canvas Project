@@ -34,7 +34,7 @@
 	  function newShape() {
 		var x = Math.random() * canvas.width/3;
 		var y = Math.random() * canvas.height/3;
-		var colors = ["darkcyan", "darkblue", "cyan", "deepskyblue", "springreen", "seagreen"];
+		var colors = ["darkcyan", "turquoise", "cyan", "deepskyblue", "springreen", "seagreen"];
 		var color = colors[Math.floor(Math.random()*colors.length)];
 		shapes.push(new Shape(x, y, color));
 		
