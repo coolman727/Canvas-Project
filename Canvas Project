@@ -93,7 +93,7 @@
 		context.fillStyle = 'yellow';
 		context.font = 'italic 2em arial';
 		context.textAlign = 'right';
-		context.fillText('Welcome to My Random Sea!', canvas.width-40, canvas.height-40);
+		context.fillText('Welcome to The Random Sea!', canvas.width-40, canvas.height-40);
 	}
       function resizeCanvas() {
         canvas.width = window.innerWidth-20;
