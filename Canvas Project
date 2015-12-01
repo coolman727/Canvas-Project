@@ -90,7 +90,7 @@
 			context.fill();
 	  }
 	  function drawText() {
-		context.fillStyle = 'limegreen';
+		context.fillStyle = 'yellow';
 		context.font = 'italic 2em arial';
 		context.textAlign = 'right';
 		context.fillText('Welcome to My Random Sea!', canvas.width-40, canvas.height-40);
