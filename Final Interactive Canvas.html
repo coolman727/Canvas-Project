@@ -109,18 +109,14 @@
 			context.fillStyle = drop.color;
 			context.fill();
 	  }
-	  function drawText() {
-	  	context.fillStyle = 'yellow'
-		context.font = 'italic 2em arial';
-		context.textAlign = 'right';
-		context.fillText('Welcome to The Random Sea!', canvas.width-40, canvas.height-40);
-		
+	 
 	function drawScreen() {
 		
 	}
 	function gameLoop() {
 		window.setTimeout(gameLoop, 20);
 		drawScreen()
+	}
 		var colorStops = new Array(
 			{color:"darkcyan", stopPercent:0},
 			{color:"turquoise", stopPercent:1},
@@ -149,7 +145,7 @@
    context.fillStyle = gradient;
    context.fillText ('Welcome!', canvas.width-20, canvas.height-20);
  }
-	}
+	
 	}
 	
       function resizeCanvas() {
