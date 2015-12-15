@@ -40,7 +40,16 @@
       	                     found = true;
       	                     }
       	                }
-      	   }
+      	                fillBackgroundColor();
+      	                if (!found) {
+      	                	var colors = ["darkcyan", "turquoise", "cyan", "deepskyblue", "springreen", "seagreen"];
+      	                	var color = colors[Math.floor(Math.random()*colors.length)];
+      	                	shapes.push(new Shape(x, y, color));
+      	                }
+      	                for (var i=0; i<shapes.length; i++) {
+      	                	drawShape(shapes[i]);
+      	                }
+      	  }
       	           
 	  function newShape() {
 		var x = Math.random() * canvas.width/3;
