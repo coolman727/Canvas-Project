@@ -3,7 +3,7 @@
 <head>
 <title>Responsive Interactive Canvas</title>
 <script>
-	  var canvas = document.getElementById('canvas');
+	  var canvas;
 	  var context;
 	  var shapes = [];
 	  var timer;
@@ -31,12 +31,12 @@
 		timer = setInterval(resizeCanvas, 40);
 		timerTwo = setInterval(newShape, 400);
       }
-      	  function handleClick(x, y) {
+      	function handleClick(x, y) {
       	    var found = false;
       	        for (var i=0; i<shapes.length; i++) {
       	             d = Math.sqrt((shapes[i].x - x) *(shapes[i].x - x) + (shapes[i].y - y)*(shapes[i].y - y));
       	             if (d <= 30) {
-      	                     shapes.splice(i, 1);
+      	                     shapes.splice(i, 2);
       	                     found = true;
       	                     }
       	                }
@@ -50,7 +50,7 @@
       	                	drawShape(shapes[i]);
       	                }
       	  }
-      	           
+      	                     
 	  function newShape() {
 		var x = Math.random() * canvas.width/3;
 		var y = Math.random() * canvas.height/3;
@@ -109,60 +109,12 @@
 			context.fillStyle = drop.color;
 			context.fill();
 	  }
-	 
-	function drawScreen() {
-		context.fillStyle = "#000000";
-		context.fillRect(0, 0, canvas.width, canvas.height);
-		
-		context.font = "50px impact"
-		context.textAlign = "center";
-		context.textBaseline = "middle";
-		
-		var metrics = context.measureText('Welcome!')
-		var textWidth = metrics.width;
-		var xPosition = (canvas.width/2);
-		var yPosition = (canvas.height/2);
-		
-		var gradient = context.createLinearGradient(
-			canvas.width/2,0
-			canvas.width/2,
-			canvas.height
-			);
-					for (var i=0; i < colorStops.length; i++) {
-   var tempColorStop = colorStops[i];
-   var tempColor = tempColorStop.color;
-   var tempStopPercent = tempColorStop.stopPercent;
-   gradient.addColorStop(tempStopPercent,tempColor);
-   tempStopPercent += 1;
-   if (tempStopPercent > 1) {
-       tempStopPercent = 0;
-   }
-   tempColorStop.stopPercent = tempStopPercent;;
-   colorStops[i] = tempColorStop;
-   context.fillStyle = gradient;
-   context.fillText ('Welcome!', xPosition, yPosition);
- }
+	  function drawText() {
+		context.fillStyle = 'yellow';
+		context.font = 'italic 2em arial';
+		context.textAlign = 'right';
+		context.fillText('Welcome to The Random Sea!', canvas.width-40, canvas.height-40);
 	}
-	function gameLoop() {
-		window.setTimeout(gameLoop, 20);
-		drawScreen()
-	}
-		var colorStops = new Array(
-			{color:"darkcyan", stopPercent:0},
-			{color:"turquoise", stopPercent:1},
-			{color:"cyan", stopPercent:3},
-			{color:"deepskyblue", stopPercent:6},
-			{color:"springreen", stopPercent:8},
-			{color:"seagreen", stopPercent:10});
-			gameLoop();
-			}
-			
-		
-			
-
-	
-	
-	
       function resizeCanvas() {
         canvas.width = window.innerWidth-20;
         canvas.height = window.innerHeight-20;
@@ -198,12 +150,9 @@
 		return (degrees * Math.PI)/180;
 	}
 	window.onload = init;
-	
 </script>
 </head>
-
 <body>
 <canvas id='canvas' width=500 height=500></canvas>
-
 </body>	  
 </html>
