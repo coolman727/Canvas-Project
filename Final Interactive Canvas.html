@@ -2,6 +2,22 @@
 <html>
 <head>
 <title>Responsive Interactive Canvas</title>
+<style>
+	body {
+		margin: 0px;
+		padding: 0px;
+	}
+	#buttons {
+		position: absolute;
+		top: 5px;
+		left: 10px;
+	}
+	#buttons > input {
+		padding: 10px;
+		display: block;
+		margin-top: 5px;
+	}
+</style>
 <script>
 	  var canvas;
 	  var context;
@@ -157,22 +173,7 @@
 	}, false);
 </script>
 </head>
-<style>
-	body {
-		margin: 0px;
-		padding: 0px;
-	}
-	#buttons {
-		position: absolute;
-		top: 5px;
-		left: 10px;
-	}
-	#buttons > input {
-		padding: 10px;
-		display: block;
-		margin-top: 5px;
-	}
-</style>
+
 <body>
 <canvas id='canvas' width=500 height=500></canvas>
 <div id="buttons">
