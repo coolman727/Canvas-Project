@@ -31,6 +31,17 @@
 		timer = setInterval(resizeCanvas, 40);
 		timerTwo = setInterval(newShape, 400);
       }
+      	  function handleClick(x, y) {
+      	    var found = false;
+      	        for (var i=0; i<shapes.length; i++) {
+      	             d = Math.sqrt((shapes[i].x - x) *(shapes[i].x - x) + (shapes[i].y - y)*(shapes[i].y - y));
+      	             if (d <= 30) {
+      	                     shapes.splice(i, 1);
+      	                     found = true;
+      	                     }
+      	                }
+      	   }
+      	           
 	  function newShape() {
 		var x = Math.random() * canvas.width/3;
 		var y = Math.random() * canvas.height/3;
