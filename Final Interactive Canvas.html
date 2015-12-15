@@ -114,7 +114,42 @@
 		context.font = 'italic 2em arial';
 		context.textAlign = 'right';
 		context.fillText('Welcome to The Random Sea!', canvas.width-40, canvas.height-40);
-	
+		
+	function drawScreen() {
+		
+	}
+	function gameLoop() {
+		window.setTimeout(gameLoop, 20);
+		drawScreen()
+		var colorStops = new Array(
+			{color:"darkcyan", stopPercent:0},
+			{color:"turquoise", stopPercent:.125},
+			{color:"cyan", stopPercent:.375},
+			{color:"deepskyblue", stopPercent:.625},
+			{color:"springreen", stopPercent:.875},
+			{color:"seagreen", stopPercent:1});
+			
+		var gradient = context.createLinearGradient(
+			canvas.width/2,0
+			canvas.width/2,
+			canvas.height
+			);
+			
+		for (var i=0; i < colorStops.length; i++) {
+   var tempColorStop = colorStops[i];
+   var tempColor = tempColorStop.color;
+   var tempStopPercent = tempColorStop.stopPercent;
+   gradient.addColorStop(tempStopPercent,tempColor);
+   tempStopPercent += .015;
+   if (tempStopPercent > 1) {
+       tempStopPercent = 0;
+   }
+   tempColorStop.stopPercent = tempStopPercent;;
+   colorStops[i] = tempColorStop;
+   context.fillStyle = gradient;
+   context.fillText ('Welcome!', canvas.width-20, canvas.height-20);
+ }
+	}
 	}
 	
       function resizeCanvas() {
