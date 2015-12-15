@@ -116,6 +116,7 @@
 		context.fillText('Welcome to The Random Sea!', canvas.width-40, canvas.height-40);
 	
 	}
+	
       function resizeCanvas() {
         canvas.width = window.innerWidth-20;
         canvas.height = window.innerHeight-20;
@@ -151,9 +152,31 @@
 		return (degrees * Math.PI)/180;
 	}
 	window.onload = init;
+	document.getElementById('clear').addEventListener('click', function() {
+		context.clearRect(0, 0, canvas.width, canvas.height);
+	}, false);
 </script>
 </head>
+<style>
+	body {
+		margin: 0px;
+		padding: 0px;
+	}
+	#buttons {
+		position: absolute;
+		top: 5px;
+		left: 10px;
+	}
+	#buttons > input {
+		padding: 10px;
+		display: block;
+		margin-top: 5px;
+	}
+</style>
 <body>
 <canvas id='canvas' width=500 height=500></canvas>
+<div id="buttons">
+	input type="button" id="clear" value="Clear">
+</div>
 </body>	  
 </html>
