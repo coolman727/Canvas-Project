@@ -123,13 +123,7 @@
 			context.translate(250, 0);
 			
 		context.fillText('Welcome to The Random Sea!', canvas.width-40, canvas.height-40);
-		context.restore();
-		for(i = 0, i < 3; i++) {
-			components[i] += operations[i];
-			if ((components[i] >= 250 || (components[i] <= 0)) operations[i] *= -1;
-		}
-		
-			}
+	
 	}
       function resizeCanvas() {
         canvas.width = window.innerWidth-20;
