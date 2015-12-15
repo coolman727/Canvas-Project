@@ -114,6 +114,9 @@
 		context.font = 'italic 2em arial';
 		context.textAlign = 'right';
 		context.fillText('Welcome to The Random Sea!', canvas.width-40, canvas.height-40);
+		context.save();
+		context.translate(200, 0);
+		context.restore();
 	}
       function resizeCanvas() {
         canvas.width = window.innerWidth-20;
