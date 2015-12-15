@@ -31,25 +31,6 @@
 		timer = setInterval(resizeCanvas, 40);
 		timerTwo = setInterval(newShape, 400);
       }
-      	  function handleClick(x, y) {
-      	    var found = false;
-      	        for (var i=0; i<shapes.length; i++) {
-      	             d = Math.sqrt((shapes[i].x - x) *(shapes[i].x - x) + (shapes[i].y - y)*(shapes[i].y - y));
-      	             if (d <= 30) {
-      	                     shapes.splice(i, 1);
-      	                     found = true;
-      	                     }
-      	                }
-      	                fillBackgroundColor();
-      	                if (!found) {
-      	                	var colors = ["darkcyan", "turquoise", "cyan", "deepskyblue", "springreen", "seagreen"];
-      	                	var color = colors[Math.floor(Math.random()*colors.length)];
-      	                	shapes.push(new Shape(x, y, color));
-      	                }
-      	                for (var i=0; i<shapes.length; i++) {
-      	                	drawShape(shapes[i]);
-      	                }
-      	  }
       	           
 	  function newShape() {
 		var x = Math.random() * canvas.width/3;
